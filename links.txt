@@ -1,0 +1,13 @@
+http://www.figlet.org/ - FIGlet is a program for making large letters out of ordinary text
+
+----------------------------------------------------------
+
+Python libraries:
+
+https://pypi.python.org/pypi/virtualenv -  Tool to create isolated Python environments.
+
+https://pypi.python.org/pypi/pyfiglet
+https://pypi.python.org/pypi/termcolor
+https://pypi.python.org/pypi/colorama
+
+http://stackoverflow.com/a/9638532 - example.py
