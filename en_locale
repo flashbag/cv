@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+export LC_TIME=en_US.UTF-8

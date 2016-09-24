@@ -1,7 +1,7 @@
 # flashbag's terminal CV
 
-
 # Setup instuctions
+
 ## Prepare virtualenv
 
 ### Create a virtualenv
@@ -14,6 +14,9 @@ virtualenv env
 source env/bin/activate
 ```
 
+### Set en_US.UTF8 locale
+
+source ./en_locale
 
 
 ## Install libraries locally
