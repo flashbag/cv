@@ -199,7 +199,7 @@ def section_work():
 	my_sleep(1)
 
 	work_started_at(2013, 5)
-	work_finished_at(2013, 6)
+	work_finished_at(2013, 7)
 
 	cprint(centered_string('what i was doing?'), 'cyan')
 
@@ -282,6 +282,7 @@ if show_all_sections == True:
 	section_heading()
 	section_introduction()
 	section_work()
+	section_skills()
 
 	exit
 
