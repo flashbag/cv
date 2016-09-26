@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# coding: latin-1
+
 
 import sys,time,random
 
@@ -17,6 +19,7 @@ init(strip=not sys.stdout.isatty()) # strip colors if stdout is redirected
 show_section = (len(sys.argv) > 1 and sys.argv[1] or "")
 show_all_sections = (show_section == "" and True or False)
 
+skip_sleep = False
 typing_speed = 50 #wpm
 
 # print 'show_section:', show_section
@@ -24,7 +27,6 @@ typing_speed = 50 #wpm
 
 def my_sleep(time):
 
-	skip_sleep = True
 	if skip_sleep:
 		return
 	else:
@@ -86,8 +88,21 @@ def progress_bar(title):
 	my_sleep(1)
 	print
 
+def work_started_at(year, month):
 
+	slow_type('started at:');
+	my_sleep(1);
+	print
 
+	call(["cal", "-m " + str(month) ,str(year)])
+
+def work_finished_at(year, month):
+
+	slow_type('finished at:');
+	my_sleep(1);
+	print
+
+	call(["cal", "-m " + str(month) ,str(year)])
 
 # section functions
 
@@ -156,26 +171,105 @@ def section_introduction():
 def section_work():
 	# section 2 - work
 
+	wipref = "   ✔   "
 	progress_bar("scanning work experience")
 
+	# TIMTEK
 	cprint(centered_string('first work in 2013, in company named:'), 'green')
 
 	my_sleep(1)
 	cprint(figlet_format('TimTek', font='cybermedium'), 'blue', attrs=['bold'])
 	my_sleep(1)
 
-	slow_type('started at:')
-	my_sleep(1)
-	print
-	call(["cal", "-m 1" ,"2013"])
-
-	slow_type('finished at:')
-	my_sleep(1)
-	print
-	call(["cal", "-m 2" ,"2013"])
+	work_started_at(2013, 1)
+	work_finished_at(2013, 2)
 
 	cprint(centered_string('what i was doing?'), 'cyan')
 
+	slow_type(colored(wipref + "learning Codeigniter PHP framework", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "writing internet forum on Codeigniter", 'cyan')); my_sleep(1)
+	print
+
+
+	# LEZGRO
+	cprint(centered_string('second work in 2013, in company named:'), 'green')
+
+	my_sleep(1)
+	cprint(figlet_format('LETZGRO', font='cybermedium'), 'blue', attrs=['bold'])
+	my_sleep(1)
+
+	work_started_at(2013, 5)
+	work_finished_at(2013, 6)
+
+	cprint(centered_string('what i was doing?'), 'cyan')
+
+	slow_type(colored(wipref + "working with HTML layout of site", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "fixing bugs on site writed on Zend Framework", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "learing and diving into Yii framework", 'cyan')); my_sleep(1)
+	print
+
+	# UKIETECH
+	cprint(centered_string('third work in company named:'), 'green')
+
+
+
+	my_sleep(1)
+	cprint(figlet_format('UKIETECH', font='contessa'), 'blue', attrs=[])
+	my_sleep(1)
+
+	work_started_at(2013, 12)
+	work_finished_at(2014, 6)
+
+	cprint(centered_string('what i was doing?'), 'cyan')
+
+	slow_type(colored(wipref + "working with command of developers on clients projects", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "developing HTML/CSS layout due to given tasks", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "integrating Sphinx realtime search into site search", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "integrating Phinx PHP migrations to existing code of site", 'cyan')); my_sleep(1)
+
+
+	# SOFTJOURN
+	cprint(centered_string('fourth work in company named:'), 'green')
+
+	my_sleep(1)
+	cprint(figlet_format('SOFTJOURN', font='contessa'), 'blue', attrs=[])
+	my_sleep(1)
+
+	work_started_at(2014, 8)
+	work_finished_at(2016, 6)
+
+	cprint(centered_string('what i was doing?'), 'cyan')
+
+	slow_type(colored(wipref + "Backbone.js front-end development", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "adaptive HTML layout for different devices", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "back-end PHP programming and DB design", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "maintaining server infrastructure and deploying code", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "experience with different service providers APIs", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "working with Angular 1.* application development", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "REST API engineering on Node.js + Mongo DB", 'cyan')); my_sleep(1)
+	slow_type(colored(wipref + "commom Linux System Administration ", 'cyan')); my_sleep(1)
+
+def section_skills():
+
+	# section 3 - skills
+
+	sipref = "   ☛    "
+	progress_bar("compiling skills from experience")
+	my_sleep(1)
+
+	cprint(centered_string('Proffessional skills'), 'cyan')
+
+
+	slow_type(colored(sipref + "PHP ------ 4 years of XP", 'cyan')); my_sleep(1)
+	slow_type(colored(sipref + "Linux ---- 4 years of XP", 'cyan')); my_sleep(1)
+	slow_type(colored(sipref + "Git ------ 3 years of XP", 'cyan')); my_sleep(1)
+	slow_type(colored(sipref + "Angular ------ 1 year of XP", 'cyan')); my_sleep(1)
+	slow_type(colored(sipref + "Yii, Phalcon ------ 1 year of XP", 'cyan')); my_sleep(1)
+	slow_type(colored(sipref + "Javascript, Node.js ------ 2 years of XP", 'cyan')); my_sleep(1)
+
+	my_sleep(1)
+
+	slow_type(colored(sipref + "Python ------ begginer, learning in progress", 'cyan')); my_sleep(1)
 
 
 # show all sections and exit
@@ -202,4 +296,8 @@ if show_section == 'introducion':
 
 if show_section == 'work':
  	section_work()
+
+if show_section == 'skills':
+ 	section_skills()
+
 
